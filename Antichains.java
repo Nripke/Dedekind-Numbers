@@ -34,24 +34,6 @@ public class Antichains extends Thread
     {
         return total;
     }
-    /*Old method
-    public void generateChains(ArrayList<Integer> chain, int length, int start)
-    {
-        if (length == 0)
-        {
-            //printArray(chain);
-            total = total.add(BigInteger.ONE);
-            return;
-        }
-        for (int i = start; i<len-1; i++)
-        {
-            if (!isAnti(chain, i)) {continue;}
-            chain.add(i);
-            generateChains(chain, length-1, i+1);
-            chain.remove(chain.size()-1);
-        }
-    }
-    */
    
     public void run()
     {
@@ -70,12 +52,6 @@ public class Antichains extends Thread
             Antichains thread = new Antichains(i, length, new ArrayList<Integer>(), n);
             threads.add(thread);
             thread.start();
-            //445508174300
-            //116723375800
-            //ArrayList<Integer> ar = new ArrayList<Integer>();
-            //ar.add(i);
-            //alternateChains(ar, length-1);
-            //System.out.println("Finished Start Of: ("+i+"/"+(len-1)+")");
         }
         
         for (int i = 0; i<threads.size(); i++)
