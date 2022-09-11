@@ -7,7 +7,7 @@ Algorithm Step 2: Create a graph, wherein each subset points towards all subsets
 
 Algorithm Step 3: Recursively create chains, whilst progressively checking if they are antichains using step 2
 
-Algorithm Step 4: Loop through chains of lengths 1 to nC[n/2]
+Algorithm Step 4: Loop through chains of lengths 1 to nCfloor(n/2)
 
 Algorithm Step 5: Continuously sum all resulting antichains, and thus all antichains created by subsets of the n-set
 
@@ -31,7 +31,7 @@ Antichains.java must also take a specified length of the antichain you wish to f
 
 ---
 
-Subsets.java utilizes a trick in which each subset of the \(n\)-set represents some string of bits, in which a 1 represents that variable is included, and a 0 represents a variable not included. Thus to create all subsets, you must simply convert all integers from 1 to \(2^{n-1}\) into binary.
+Subsets.java utilizes a trick in which each subset of the n-set represents some string of bits, in which a 1 represents that variable is included, and a 0 represents a variable not included. Thus to create all subsets, you must simply convert all integers from 1 to 2^(n-1) into binary.
 
 In doing so, it creates an instance of Subset.java an adds it to an ArrayList. This information is stored as a feild, and can be accessed by Antichain.java.
 
